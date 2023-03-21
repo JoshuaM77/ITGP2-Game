@@ -351,6 +351,7 @@
 "Assets/Script/MainMenuScript.cs"
 "Assets/Script/SceneChanger.cs"
 "Assets/Script/SpriteButtonScript.cs"
+"Assets/Script/Test2.cs"
 "Assets/Script/Tester.cs"
 -langversion:9.0
 
