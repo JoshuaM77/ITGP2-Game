@@ -331,7 +331,7 @@
 -r:"D:/2022.1.23f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
 -r:"D:/2022.1.23f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
 -r:"D:/2022.1.23f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
--r:"D:/University Stuff/Integrated Project 2/Integrated Project 2 game/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
+-r:"D:/ITGP2-Game/Integrated Project 2 game/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/Unity.Services.Core.Analytics.ref.dll"
@@ -351,6 +351,7 @@
 "Assets/Script/MainMenuScript.cs"
 "Assets/Script/SceneChanger.cs"
 "Assets/Script/SpriteButtonScript.cs"
+"Assets/Script/Tester.cs"
 -langversion:9.0
 
 /deterministic
