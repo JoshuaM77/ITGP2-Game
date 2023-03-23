@@ -9,13 +9,12 @@ public class LevelUnlockScript : MonoBehaviour
 {
 
     public bool isUnlocked = false;
-    public Scene levelScene;
+    public string levelScene;
     public GameObject Row;
 
-    public LevelUnlockScript levelToUnlock1;
-    public LevelUnlockScript levelToUnlock2;
-    public LevelUnlockScript levelToUnlock3;
-    public LevelUnlockScript levelToUnlock4;
+    public Component[] buttonsInRow;
+    public LevelUnlockScript[] levelsToUnlock;
+    public int unlockPref;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +38,7 @@ public class LevelUnlockScript : MonoBehaviour
             imageRenderer.color = Color.green;
         }
     }
+    //Locks the Current Level
     public void LevelLock()
     {
         isUnlocked = false;
@@ -53,23 +53,24 @@ public class LevelUnlockScript : MonoBehaviour
         {
         lockCurrentRow();
         LevelLock();
-        levelToUnlock1.LevelUnlock();
-        levelToUnlock2.LevelUnlock();
-        levelToUnlock3.LevelUnlock();
-        levelToUnlock4.LevelUnlock();
+        foreach (LevelUnlockScript levelToUnlock in levelsToUnlock)
+            levelToUnlock.LevelUnlock();
         }
     }
+    //Lock the Row that this button is on
     public void lockCurrentRow()
     {
-        LevelUnlockScript rowScripts = Row.GetComponentInChildren<LevelUnlockScript>();
-        rowScripts.LevelLock();
-        if(rowScripts != null)
-        {
-            rowScripts.LevelLock();
-        }
+     buttonsInRow = Row.GetComponentsInChildren<LevelUnlockScript>();
+    
+    foreach (LevelUnlockScript script in buttonsInRow)
+            script.LevelLock();
     }
         public void PlayLevel()
     {
-        SceneManager.LoadScene(levelScene.name);
+        SceneManager.LoadScene(levelScene);
+    }
+    public void saveUnlocked()
+    {
+        
     }
 }
