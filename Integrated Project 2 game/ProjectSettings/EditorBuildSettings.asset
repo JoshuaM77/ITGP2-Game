@@ -59,4 +59,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: c37aff10fee707a4bac7016893e6eb1f
+  - enabled: 1
+    path: Assets/Scenes/Tests/Level Test.unity
+    guid: 34b8ff934430876489821c9303b4003e
+  - enabled: 1
+    path: Assets/Scenes/Tests/Level Unlock Test.unity
+    guid: b7084b291a49e2648a881a1e74a71534
   m_configObjects: {}
