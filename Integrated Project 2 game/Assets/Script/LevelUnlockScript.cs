@@ -15,16 +15,23 @@ public class LevelUnlockScript : MonoBehaviour
     public Component[] buttonsInRow;
     public LevelUnlockScript[] levelsToUnlock;
     public int unlockPref;
+    public int isUnlockedInt = 1;
+    public bool firstLevel = false;
+    public int levelID;
+    public static bool initDone;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (isUnlocked == true)
+            bool isUnlockedPref = intToBool(PlayerPrefs.GetInt(levelID.ToString() + "isUnlockedPref"));
+            isUnlocked = isUnlockedPref;
+            
+            if (isUnlocked == true)
 
-        {
-            Image imageRenderer = this.gameObject.GetComponent<Image>();
-            imageRenderer.color = Color.green;
-        }
+            {
+                Image imageRenderer = this.gameObject.GetComponent<Image>();
+                imageRenderer.color = Color.green;
+            }
     }
 
 
@@ -71,6 +78,27 @@ public class LevelUnlockScript : MonoBehaviour
     }
     public void saveUnlocked()
     {
-        
+        PlayerPrefs.SetInt(levelID.ToString() + "isUnlockedPref", boolToInt(isUnlocked));
+        PlayerPrefs.Save();
+    }
+    private void OnSceneUnloaded(Scene current)
+    {
+        saveUnlocked();
+    }
+    int boolToInt(bool val)
+    {
+        if (val)
+            return 1;
+        else
+            return 0;
+    }
+
+    bool intToBool(int val)
+    {
+        if (val != 0)
+            return true;
+        else
+            return false;
+
     }
 }
