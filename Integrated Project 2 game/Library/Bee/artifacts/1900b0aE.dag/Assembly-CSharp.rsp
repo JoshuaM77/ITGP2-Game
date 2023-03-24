@@ -345,11 +345,11 @@
 -analyzer:"E:/Uni/3D/Unity/2022.2.11f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Script/CameraController.cs"
 "Assets/Script/CameraMoveScript.cs"
+"Assets/Script/firstInitScript.cs"
 "Assets/Script/LevelSelector.cs"
 "Assets/Script/LevelUnlockScript.cs"
 "Assets/Script/loadScene.cs"
 "Assets/Script/MainMenuScript.cs"
-"Assets/Script/PlayerData.cs"
 "Assets/Script/SceneChanger.cs"
 "Assets/Script/SpriteButtonScript.cs"
 -langversion:9.0
