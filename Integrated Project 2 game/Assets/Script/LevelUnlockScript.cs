@@ -15,7 +15,7 @@ public class LevelUnlockScript : MonoBehaviour
     public Component[] buttonsInRow;
     public LevelUnlockScript[] levelsToUnlock;
     public int unlockPref;
-    public int isUnlockedInt = 1;
+    public int levelState = 0;
     public bool firstLevel = false;
     public int levelID;
     public static bool initDone;
@@ -23,15 +23,32 @@ public class LevelUnlockScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-            bool isUnlockedPref = intToBool(PlayerPrefs.GetInt(levelID.ToString() + "isUnlockedPref"));
-            isUnlocked = isUnlockedPref;
+
+        levelState = PlayerPrefs.GetInt(levelID.ToString() + "LevelState", 0);
+        
+        if(gameObject.tag == "firstLevel" && levelState == 0)
+        {
+            isUnlocked = true;
+            Image imageRenderer = this.gameObject.GetComponent<Image>();
+            imageRenderer.color = Color.green;
+        }
+        else
+        {
             
-            if (isUnlocked == true)
+            if (levelState == 0)
 
             {
-                Image imageRenderer = this.gameObject.GetComponent<Image>();
-                imageRenderer.color = Color.green;
+                return;
             }
+            else if(levelState == 1)
+            {
+                LevelUnlock();
+            }
+            else if (levelState == 2)
+            {
+                LevelLock();
+            }
+        }
     }
 
 
@@ -43,6 +60,8 @@ public class LevelUnlockScript : MonoBehaviour
             isUnlocked = true;
             Image imageRenderer = this.gameObject.GetComponent<Image>();
             imageRenderer.color = Color.green;
+            levelState = 1;
+            saveUnlocked();
         }
     }
     //Locks the Current Level
@@ -51,6 +70,8 @@ public class LevelUnlockScript : MonoBehaviour
         isUnlocked = false;
         Image imageRenderer = this.gameObject.GetComponent<Image>();
         imageRenderer.color = Color.gray;
+        levelState = 2;
+        saveUnlocked();
     }
 
     //A Function to be called when this level is completed to unlock the next level(s)
@@ -72,17 +93,18 @@ public class LevelUnlockScript : MonoBehaviour
     foreach (LevelUnlockScript script in buttonsInRow)
             script.LevelLock();
     }
-        public void PlayLevel()
+    public void PlayLevel()
     {
+        MapSceneEnd();
         SceneManager.LoadScene(levelScene);
     }
     public void saveUnlocked()
     {
-        PlayerPrefs.SetInt(levelID.ToString() + "isUnlockedPref", boolToInt(isUnlocked));
-        PlayerPrefs.Save();
+        PlayerPrefs.SetInt(levelID.ToString() + "LevelState", levelState);
     }
-    private void OnSceneUnloaded(Scene current)
+    private void MapSceneEnd()
     {
+        Debug.Log(PlayerPrefs.GetInt(levelID.ToString() + "LevelState")) ;
         saveUnlocked();
     }
     int boolToInt(bool val)

@@ -348,9 +348,15 @@
 -analyzer:"D:/2022.2.11f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Script/CameraController.cs"
 "Assets/Script/CameraMoveScript.cs"
+"Assets/Script/clearPlayerPrefs.cs"
 "Assets/Script/firstInitScript.cs"
+<<<<<<< HEAD
 "Assets/Script/GamePlay.cs"
 "Assets/Script/HealthbarScript.cs"
+=======
+"Assets/Script/GameHandler.cs"
+"Assets/Script/HealthSystem.cs"
+>>>>>>> 937be91ca26e203bfcf785aab38b625f336714b6
 "Assets/Script/LevelSelector.cs"
 "Assets/Script/LevelUnlockScript.cs"
 "Assets/Script/loadScene.cs"
