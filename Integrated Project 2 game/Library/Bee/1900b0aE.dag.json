@@ -12678,13 +12678,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp",
       "DisplayName": "Writing Assembly-CSharp.rsp",
       "ActionType": "WriteFile",
-<<<<<<< HEAD
       "PayloadOffset": 756354,
-      "PayloadLength": 26075,
-=======
-      "PayloadOffset": 793667,
-      "PayloadLength": 28533,
->>>>>>> 937be91ca26e203bfcf785aab38b625f336714b6
+      "PayloadLength": 26207,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -12696,11 +12691,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp2",
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
-<<<<<<< HEAD
-      "PayloadOffset": 782516,
-=======
-      "PayloadOffset": 822287,
->>>>>>> 937be91ca26e203bfcf785aab38b625f336714b6
+      "PayloadOffset": 782648,
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -12941,13 +12932,11 @@
         "Assets/Script/CameraMoveScript.cs",
         "Assets/Script/clearPlayerPrefs.cs",
         "Assets/Script/firstInitScript.cs",
-<<<<<<< HEAD
-        "Assets/Script/GamePlay.cs",
-        "Assets/Script/HealthbarScript.cs",
-=======
         "Assets/Script/GameHandler.cs",
+        "Assets/Script/GamePlay.cs",
+        "Assets/Script/HealthBar.cs",
+        "Assets/Script/HealthbarScript.cs",
         "Assets/Script/HealthSystem.cs",
->>>>>>> 937be91ca26e203bfcf785aab38b625f336714b6
         "Assets/Script/LevelSelector.cs",
         "Assets/Script/LevelUnlockScript.cs",
         "Assets/Script/loadScene.cs",
@@ -13130,13 +13119,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-<<<<<<< HEAD
-      "PayloadOffset": 782612,
+      "PayloadOffset": 782744,
       "PayloadLength": 8677,
-=======
-      "PayloadOffset": 822383,
-      "PayloadLength": 8437,
->>>>>>> 937be91ca26e203bfcf785aab38b625f336714b6
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
       "Outputs": [
