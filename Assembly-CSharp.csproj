@@ -64,8 +64,8 @@
     <Compile Include="Assets\Script\SceneChanger.cs" />
     <Compile Include="Assets\Script\LevelUnlockScript.cs" />
     <Compile Include="Assets\Script\PlayerData.cs" />
-    <Compile Include="Assets\brightnesss.cs" />
     <Compile Include="Assets\Script\CameraController.cs" />
+    <Compile Include="Assets\brightnesss.cs" />
     <Compile Include="Assets\Script\LevelSelector.cs" />
     <Compile Include="Assets\Script\CameraMoveScript.cs" />
     <Compile Include="Assets\Script\GoToMainMenu.cs" />
