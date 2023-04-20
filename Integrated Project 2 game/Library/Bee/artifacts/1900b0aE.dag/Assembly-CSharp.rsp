@@ -119,6 +119,7 @@
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
+-define:UNITY_POST_PROCESSING_STACK_V2
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"E:/Uni/3D/Unity/2022.2.11f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
@@ -332,6 +333,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Postprocessing.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Postprocessing.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.ref.dll"
@@ -346,14 +349,25 @@
 "Assets/Script/CameraController.cs"
 "Assets/Script/CameraMoveScript.cs"
 "Assets/Script/clearPlayerPrefs.cs"
+"Assets/Script/DamagePopup.cs"
+"Assets/Script/EnemyScript.cs"
 "Assets/Script/firstInitScript.cs"
+"Assets/Script/GameAssets.cs"
 "Assets/Script/GameHandler.cs"
+"Assets/Script/HealthBar.cs"
 "Assets/Script/HealthSystem.cs"
+"Assets/Script/ItemCard.cs"
 "Assets/Script/LevelSelector.cs"
 "Assets/Script/LevelUnlockScript.cs"
 "Assets/Script/loadScene.cs"
 "Assets/Script/MainMenuScript.cs"
+"Assets/Script/pickupS/itemChoices.cs"
+"Assets/Script/pickupS/pickupSelectButton.cs"
 "Assets/Script/SceneChanger.cs"
+"Assets/Script/Scriptable Objects/Ability.cs"
+"Assets/Script/Scriptable Objects/Inventory/Scripts/InventoryObject.cs"
+"Assets/Script/Scriptable Objects/Item.cs"
+"Assets/Script/Scriptable Objects/Pickups.cs"
 "Assets/Script/SpriteButtonScript.cs"
 -langversion:9.0
 
