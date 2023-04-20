@@ -23,5 +23,5 @@ MonoBehaviour:
   critDamageModifier: 1
   turnDurationModifier: 1
   defenceModifier: 1
-  dodgeChanceModifier: 1
+  dodgeChanceModifier: 0
   maxHealthModifier: 1

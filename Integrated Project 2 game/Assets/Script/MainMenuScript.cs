@@ -14,6 +14,11 @@ public class MainMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene("Options");
     }
+    
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 
     public void ExitButton()
     {

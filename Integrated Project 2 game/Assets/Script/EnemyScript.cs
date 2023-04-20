@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -11,13 +12,15 @@ public class EnemyScript : MonoBehaviour
     public int criticalDamage;
     private int damageToPlayer;
     public GameHandler gameHandler;
+    private Animator animator;
 
     void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
     public void EnemyTurn()
     {
+        animator.Play("Attack");
         damageToPlayer = Random.Range(minumumDamage,maximumDamage);
         gameHandler.p1Damage(damageToPlayer);
         gameHandler.p2Damage(damageToPlayer);

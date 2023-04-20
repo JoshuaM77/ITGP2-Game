@@ -18,6 +18,7 @@ public class Item : Pickups
     public float defenceModifier;
     public float dodgeChanceModifier;
     public float maxHealthModifier;
+    public float healthRecoveryModifier;
     
     public void Awake()
     {

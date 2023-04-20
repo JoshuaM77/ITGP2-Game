@@ -29,7 +29,7 @@ public class InventorySlot
 {
     public Pickups pickup;
     public int amount;
-    public int oldAmount;
+    public int oldAmount = 0;
     public bool isNew;
     public InventorySlot (Pickups _pickup, int _amount)
     {

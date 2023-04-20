@@ -7,7 +7,7 @@ public class HealthSystem
 {
     public event EventHandler OnHealthChanged;
     private int health;
-    private int healthMax;
+    public int healthMax;
     public HealthSystem(int healthMax)
     {
         this.healthMax = healthMax;
@@ -32,6 +32,10 @@ public class HealthSystem
         health += healAmount;
         if (health > healthMax) health = healthMax;
         if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
+    }
+    public void setMaxHealth(int newMaxHealth)
+    {
+        healthMax = newMaxHealth;
     }
 
 }

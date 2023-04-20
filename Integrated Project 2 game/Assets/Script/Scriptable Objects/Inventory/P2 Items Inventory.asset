@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Container:
   - pickup: {fileID: 11400000, guid: 5b1acbe912446a24cb5ef7493d3b1e09, type: 2}
+    amount: 3
+    oldAmount: 0
+    isNew: 0
+  - pickup: {fileID: 11400000, guid: 26305bae0dfd1db44b2d6d4147e346d7, type: 2}
     amount: 1
     oldAmount: 0
     isNew: 0
