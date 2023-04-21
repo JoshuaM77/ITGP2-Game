@@ -7,7 +7,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public void StartButton()
     {
-        SceneManager.LoadScene("MapLocation1");
+        SceneManager.LoadScene("Level Test");
     }
 
     public void OptionsButton()
