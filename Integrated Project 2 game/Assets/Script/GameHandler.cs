@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class GameHandler : MonoBehaviour
 {
@@ -17,12 +18,15 @@ public class GameHandler : MonoBehaviour
     public InventoryObject p1ItemsInventory;
     public InventoryObject p2ItemsInventory;
     public GameObject dodgePopup;
+    public GameObject p1ItemChoices;
+    public GameObject p2ItemChoices;
 
     public HealthBar p1healthBar;
     public HealthBar p2healthBar;
     public HealthBar enemyHealthBar;
     public Image timerBar;
     public Component timerScale;
+    public itemDIsplay[] itemDIsplays;
     private float turnTimer;
     private float timerSize;
     public float turnDuration;
@@ -54,6 +58,12 @@ public class GameHandler : MonoBehaviour
     public int healthToRecover;
     public int p1startingHealth;
     public int p2startingHealth;
+    public Animation turnAnim;
+    public bool p1healSpellSelected;
+    public bool p1damageSpellSelected;
+    public bool p2healSpellSelected;
+    public bool p2damageSpellSelected;
+
 
 
     // Start is called before the first frame update
@@ -69,6 +79,8 @@ public class GameHandler : MonoBehaviour
         enemyHealthBar.setup(enemyHealthSystem);
         p1Actions = 1;
         p2Actions = 1;
+        p1ItemChoices.SetActive(false);
+        p2ItemChoices.SetActive(false);
         UpdateStats();
         RestartTurn();
     }
@@ -114,12 +126,14 @@ public class GameHandler : MonoBehaviour
         if(enemyHealthSystem.GetHealth() <= 0)
         {
             enemyHealthSystem.Heal(100);
+            giveItemChoices();
         }
         
     }
     void StartEnemyTurn()
     {
         isPlayerTurn = false;
+        turnAnim.Play("Enemy Turn");
         enemyScript.EnemyTurn();
     }
     public void RestartTurn()
@@ -128,6 +142,7 @@ public class GameHandler : MonoBehaviour
         p2Actions = 1;
         p1Actions = 1;
         isPlayerTurn = true;
+        turnAnim.Play("Player Turn");
         if(StartOfTurn != null)
         {
             StartOfTurn();
@@ -169,6 +184,13 @@ public class GameHandler : MonoBehaviour
         }
         StartEnemyTurn();
     }
+
+    public void giveItemChoices()
+    {
+        p1ItemChoices.SetActive(true);
+        p2ItemChoices.SetActive(true);
+
+    }
     public void UpdateStats()
     {
         Item itemInSlot;
@@ -196,6 +218,10 @@ public class GameHandler : MonoBehaviour
         p2MaxHealth = p2initialMaxHealth;
         p1healthSystem.setMaxHealth(p1initialMaxHealth);
         p2healthSystem.setMaxHealth(p2initialMaxHealth);
+        foreach (itemDIsplay itemDIsplay in itemDIsplays)
+        {
+            itemDIsplay.AssignItems();
+        }
         
         foreach (InventorySlot slot in p1ItemsInventory.Container)
         {
@@ -235,6 +261,7 @@ public class GameHandler : MonoBehaviour
             Debug.Log(p2healthSystem.GetHealth());
             }
         }
+
     }
     public void savePlayerStats()
     {
@@ -242,5 +269,36 @@ public class GameHandler : MonoBehaviour
         PlayerPrefs.SetInt("p2startingHealth", p2healthSystem.GetHealth());
     }
 
-
+    public void p1SelectHealSpell(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            p1healSpellSelected = true;
+            p1damageSpellSelected = false;
+        }
+    }
+    public void p1SelectDamageSpell(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            p1healSpellSelected = false;
+            p1damageSpellSelected = true;
+        }
+    }
+    public void p1CastSpell()
+    {
+        if (isPlayerTurn)
+        {
+            if(p1healSpellSelected && p1Actions > 0)
+            {
+                p1healthSystem.Heal(p1HealAmount);
+                p1Actions = p1Actions -1;
+            }
+            else if(p1damageSpellSelected && p1Actions > 0)
+            {
+                enemyHealthSystem.Damage(p1DamageDealt);
+                p1Actions = p1Actions -1;
+            }
+        }
+    }
 }

@@ -12,12 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae43c2c2f89364b438cff17fc6f1f1d3, type: 3}
   m_Name: P2 Items Inventory
   m_EditorClassIdentifier: 
-  Container:
-  - pickup: {fileID: 11400000, guid: 5b1acbe912446a24cb5ef7493d3b1e09, type: 2}
-    amount: 3
-    oldAmount: 0
-    isNew: 0
-  - pickup: {fileID: 11400000, guid: 26305bae0dfd1db44b2d6d4147e346d7, type: 2}
-    amount: 1
-    oldAmount: 0
-    isNew: 0
+  Container: []

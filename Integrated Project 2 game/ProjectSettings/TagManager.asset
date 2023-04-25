@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - firstLevel
+  - spellCheck1
+  - spellCheck2
+  - spellCheck3
   layers:
   - Default
   - TransparentFX

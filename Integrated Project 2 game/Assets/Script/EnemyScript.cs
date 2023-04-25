@@ -13,10 +13,14 @@ public class EnemyScript : MonoBehaviour
     private int damageToPlayer;
     public GameHandler gameHandler;
     private Animator animator;
+    private float restartDelay;
+    private bool startDelay;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        restartDelay = 3;
+        startDelay = false;
     }
     public void EnemyTurn()
     {
@@ -24,7 +28,22 @@ public class EnemyScript : MonoBehaviour
         damageToPlayer = Random.Range(minumumDamage,maximumDamage);
         gameHandler.p1Damage(damageToPlayer);
         gameHandler.p2Damage(damageToPlayer);
-        gameHandler.RestartTurn();
+        restartDelay = 3;
+        startDelay = true;
+        
+    }
+    void Update()
+    {
+        restartDelay -= Time.deltaTime;
+        if(startDelay)
+        {
+            if(restartDelay <= 0)
+            {
+                gameHandler.RestartTurn();
+                animator.Play("Idle");
+                startDelay = false;
+            }
+        }
     }
     public void CreatePopup(int damageAmount)
     {
